@@ -287,7 +287,7 @@
                 </geometry>
             </visual>
             <sensor name="camera_front" type="camera">
-                <pose>0.1 0 -0.08 0 0 0</pose>
+                <pose>0.1 0 -0.08 0 1.5708 0</pose>
                 <always_on>1</always_on>
                 <update_rate>20</update_rate>
                 <camera name="camera_front">
