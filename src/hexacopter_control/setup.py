@@ -15,8 +15,8 @@ setup(
     zip_safe=True,
     maintainer='pranjal',
     maintainer_email='workpran48@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='Waypoint follower with tracking-error logging for the X4 hexacopter',
+    license='Apache-2.0',
     extras_require={
         'test': [
             'pytest',
