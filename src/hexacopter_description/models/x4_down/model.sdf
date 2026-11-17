@@ -286,23 +286,21 @@
                     </box>
                 </geometry>
             </visual>
-            <sensor name="camera_front" type="camera">
-                <pose>0.1 0 -0.08 0 1.5708 0</pose>
+            <sensor name="camera_down" type="camera">
+                <pose>0.2 0 -0.08 0 1.5708 0</pose>
                 <always_on>1</always_on>
-                <update_rate>20</update_rate>
-                <camera name="camera_front">
+                <update_rate>10</update_rate>
+                <camera name="camera_down">
                     <!--<cameraInfoTopicName>camera_info</cameraInfoTopicName>-->
                     <!--<hackBaseline>0.07</hackBaseline>-->
-                    <horizontal_fov>2</horizontal_fov>
+                    <horizontal_fov>1.0472</horizontal_fov>
                     <lens>
                         <intrinsics>
                             <!-- fx = fy = width / ( 2 * tan (hfov / 2 ) ) -->
-                            <fx>1108.5</fx>
-                            <fy>1108.5</fy>
-                            <!-- cx = ( width + 1 ) / 2 -->
-                            <cx>640.5</cx>
-                            <!-- cy = ( height + 1 ) / 2 -->
-                            <cy>480.5</cy>
+                            <fx>554.25</fx>
+                            <fy>554.25</fy>
+                            <cx>320.5</cx>
+                            <cy>240.5</cy>
                             <s>0</s>
                         </intrinsics>
                     </lens>
@@ -315,8 +313,8 @@
                         <center>0.5 0.5</center>
                     </distortion>
                     <image>
-                        <width>1280</width>
-                        <height>960</height>
+                        <width>640</width>
+                        <height>480</height>
                         <format>R8G8B8</format>
                     </image>
                     <clip>

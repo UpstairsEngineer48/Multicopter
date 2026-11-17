@@ -1,15 +1,18 @@
+import os
+from glob import glob
 from setuptools import find_packages, setup
 
-package_name = 'hexacopter_control'
+package_name='hexacopter_control'
 
 setup(
     name=package_name,
     version='0.0.0',
     packages=find_packages(exclude=['test']),
     data_files=[
-        ('share/ament_index/resource_index/packages',
-            ['resource/' + package_name]),
-        ('share/' + package_name, ['package.xml']),
+        ('share/ament_index/resource_index/packages',['resource/'+package_name]),
+        ('share/'+package_name,['package.xml']),
+        (os.path.join('share',package_name,'launch'),glob('launch/*.py')),
+        (os.path.join('share',package_name,'rviz'),glob('rviz/*.rviz')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -17,13 +20,14 @@ setup(
     maintainer_email='workpran48@gmail.com',
     description='Waypoint follower with tracking-error logging for the X4 hexacopter',
     license='Apache-2.0',
-    extras_require={
-        'test': [
-            'pytest',
-        ],
-    },
+    extras_require={'test':['pytest']},
     entry_points={
-        'console_scripts': ['wp=hexacopter_control.wp:main'
+        'console_scripts':[
+            'wp=hexacopter_control.wp:main',
+            'mapper=hexacopter_control.mapper:main',
+            'victim_detector=hexacopter_control.victim_detector:main',
+            'planner=hexacopter_control.planner:main',
+            'follower=hexacopter_control.follower:main',
         ],
     },
 )

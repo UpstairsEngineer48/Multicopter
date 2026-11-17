@@ -295,5 +295,317 @@ You can use the velocity controller and command linear velocity and yaw angular 
         <dimensions>3</dimensions>
       </plugin>
     </include>
+  
+    <!-- arena: x 0..8, y -3..3. Brown = obstacles, flat coloured squares = victims, grey-green mounds = terrain -->
+    <!-- keep x<1.0 clear for the hexapod start. Terrain slopes are all <= 28 deg (dome rim = max slope). -->
+    <model name="obstacle_1"><static>true</static><pose>6.000 2.000 0.5 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>1 1 1</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>1 1 1</size></box></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_2"><static>true</static><pose>10.000 -4.000 0.4 0 0 0.6</pose>
+      <link name="l"><collision name="c"><geometry><box><size>1.4 0.6 0.8</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>1.4 0.6 0.8</size></box></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_3"><static>true</static><pose>4.000 -2.400 0.3 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.6 0.6 0.6</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.6 0.6 0.6</size></box></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_4"><static>true</static><pose>8.000 5.000 0.35 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.4 1 0.7</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.4 1 0.7</size></box></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_5"><static>true</static><pose>8.000 0.200 0.35 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.4 1.8 0.7</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.4 1.8 0.7</size></box></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_6"><static>true</static><pose>12.000 1.800 0.3 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><cylinder><radius>0.35</radius><length>0.6</length></cylinder></geometry></collision>
+        <visual name="v"><geometry><cylinder><radius>0.35</radius><length>0.6</length></cylinder></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_7"><static>true</static><pose>12.400 -2.400 0.25 0 0 0.4</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.8 0.5 0.5</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.8 0.5 0.5</size></box></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_8"><static>true</static><pose>14.600 2.800 0.4 0 0 -0.3</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.5 1.2 0.8</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.5 1.2 0.8</size></box></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_9"><static>true</static><pose>3.600 1.200 0.25 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.5 0.5 0.5</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.5 0.5 0.5</size></box></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_10"><static>true</static><pose>4.400 4.400 0.25 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><cylinder><radius>0.3</radius><length>0.5</length></cylinder></geometry></collision>
+        <visual name="v"><geometry><cylinder><radius>0.3</radius><length>0.5</length></cylinder></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_11"><static>true</static><pose>6.400 -4.800 0.2 0 0 0.2</pose>
+      <link name="l"><collision name="c"><geometry><box><size>1 0.4 0.4</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>1 0.4 0.4</size></box></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_12"><static>true</static><pose>14.800 -4.600 0.45 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.7 0.7 0.9</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.7 0.7 0.9</size></box></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_13"><static>true</static><pose>10.400 3.800 0.3 0 0 0.5</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.9 0.4 0.6</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.9 0.4 0.6</size></box></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_14"><static>true</static><pose>10.000 0.000 0.35 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><cylinder><radius>0.4</radius><length>0.7</length></cylinder></geometry></collision>
+        <visual name="v"><geometry><cylinder><radius>0.4</radius><length>0.7</length></cylinder></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_15"><static>true</static><pose>3.032 -0.622 0.147 0 0 1.488</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.251 0.45 0.293</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.251 0.45 0.293</size></box></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_16"><static>true</static><pose>5.150 -0.262 0.207 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><cylinder><radius>0.131</radius><length>0.414</length></cylinder></geometry></collision>
+        <visual name="v"><geometry><cylinder><radius>0.131</radius><length>0.414</length></cylinder></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_17"><static>true</static><pose>14.856 -2.616 0.21 0 0 2.958</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.289 0.381 0.421</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.289 0.381 0.421</size></box></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_18"><static>true</static><pose>7.678 -2.986 0.13 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><cylinder><radius>0.134</radius><length>0.26</length></cylinder></geometry></collision>
+        <visual name="v"><geometry><cylinder><radius>0.134</radius><length>0.26</length></cylinder></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_19"><static>true</static><pose>12.472 -0.434 0.141 0 0 1.353</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.368 0.277 0.282</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.368 0.277 0.282</size></box></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_20"><static>true</static><pose>10.018 -1.886 0.216 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><cylinder><radius>0.135</radius><length>0.432</length></cylinder></geometry></collision>
+        <visual name="v"><geometry><cylinder><radius>0.135</radius><length>0.432</length></cylinder></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_21"><static>true</static><pose>13.208 3.210 0.203 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><cylinder><radius>0.123</radius><length>0.406</length></cylinder></geometry></collision>
+        <visual name="v"><geometry><cylinder><radius>0.123</radius><length>0.406</length></cylinder></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_22"><static>true</static><pose>6.326 -3.254 0.163 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><cylinder><radius>0.204</radius><length>0.326</length></cylinder></geometry></collision>
+        <visual name="v"><geometry><cylinder><radius>0.204</radius><length>0.326</length></cylinder></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="obstacle_23"><static>true</static><pose>8.654 3.074 0.218 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><cylinder><radius>0.12</radius><length>0.437</length></cylinder></geometry></collision>
+        <visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.437</length></cylinder></geometry><material><ambient>0.15 0.1 0.05 1</ambient><diffuse>0.15 0.1 0.05 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="victim_red_1"><static>true</static><pose>12.000 4.000 0.005 0 0 0</pose>
+      <link name="l">
+        <visual name="v"><geometry><box><size>0.4 0.4 0.01</size></box></geometry>
+          <material><ambient>1 0 0 1</ambient><diffuse>1 0 0 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="victim_red_2"><static>true</static><pose>5.800 5.000 0.005 0 0 0</pose>
+      <link name="l">
+        <visual name="v"><geometry><box><size>0.4 0.4 0.01</size></box></geometry>
+          <material><ambient>1 0 0 1</ambient><diffuse>1 0 0 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="victim_red_3"><static>true</static><pose>14.400 5.000 0.005 0 0 0</pose>
+      <link name="l">
+        <visual name="v"><geometry><box><size>0.4 0.4 0.01</size></box></geometry>
+          <material><ambient>1 0 0 1</ambient><diffuse>1 0 0 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="victim_red_4"><static>true</static><pose>6.400 -1.600 0.005 0 0 0</pose>
+      <link name="l">
+        <visual name="v"><geometry><box><size>0.4 0.4 0.01</size></box></geometry>
+          <material><ambient>1 0 0 1</ambient><diffuse>1 0 0 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="victim_red_5"><static>true</static><pose>3.000 3.600 0.005 0 0 0</pose>
+      <link name="l">
+        <visual name="v"><geometry><box><size>0.4 0.4 0.01</size></box></geometry>
+          <material><ambient>1 0 0 1</ambient><diffuse>1 0 0 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="victim_green_1"><static>true</static><pose>14.000 -1.000 0.005 0 0 0</pose>
+      <link name="l">
+        <visual name="v"><geometry><box><size>0.4 0.4 0.01</size></box></geometry>
+          <material><ambient>0 1 0 1</ambient><diffuse>0 1 0 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="victim_green_2"><static>true</static><pose>9.200 -5.000 0.005 0 0 0</pose>
+      <link name="l">
+        <visual name="v"><geometry><box><size>0.4 0.4 0.01</size></box></geometry>
+          <material><ambient>0 1 0 1</ambient><diffuse>0 1 0 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="victim_green_3"><static>true</static><pose>4.800 -5.000 0.005 0 0 0</pose>
+      <link name="l">
+        <visual name="v"><geometry><box><size>0.4 0.4 0.01</size></box></geometry>
+          <material><ambient>0 1 0 1</ambient><diffuse>0 1 0 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="victim_green_4"><static>true</static><pose>11.000 2.200 0.005 0 0 0</pose>
+      <link name="l">
+        <visual name="v"><geometry><box><size>0.4 0.4 0.01</size></box></geometry>
+          <material><ambient>0 1 0 1</ambient><diffuse>0 1 0 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="victim_green_5"><static>true</static><pose>13.200 -5.000 0.005 0 0 0</pose>
+      <link name="l">
+        <visual name="v"><geometry><box><size>0.4 0.4 0.01</size></box></geometry>
+          <material><ambient>0 1 0 1</ambient><diffuse>0 1 0 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="victim_green_6"><static>true</static><pose>2.800 5.000 0.005 0 0 0</pose>
+      <link name="l">
+        <visual name="v"><geometry><box><size>0.4 0.4 0.01</size></box></geometry>
+          <material><ambient>0 1 0 1</ambient><diffuse>0 1 0 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="victim_blue_1"><static>true</static><pose>3.000 -5.000 0.005 0 0 0</pose>
+      <link name="l">
+        <visual name="v"><geometry><box><size>0.4 0.4 0.01</size></box></geometry>
+          <material><ambient>0 0 1 1</ambient><diffuse>0 0 1 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="victim_blue_2"><static>true</static><pose>14.600 0.200 0.005 0 0 0</pose>
+      <link name="l">
+        <visual name="v"><geometry><box><size>0.4 0.4 0.01</size></box></geometry>
+          <material><ambient>0 0 1 1</ambient><diffuse>0 0 1 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="victim_blue_3"><static>true</static><pose>9.600 5.000 0.005 0 0 0</pose>
+      <link name="l">
+        <visual name="v"><geometry><box><size>0.4 0.4 0.01</size></box></geometry>
+          <material><ambient>0 0 1 1</ambient><diffuse>0 0 1 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_1"><static>true</static><pose>11.380 -5.028 -0.735 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.803</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.803</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_2"><static>true</static><pose>11.162 -1.512 -0.689 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.741</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.741</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_3"><static>true</static><pose>9.652 1.836 -0.59 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.641</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.641</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_4"><static>true</static><pose>8.960 -2.538 -0.767 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.832</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.832</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_5"><static>true</static><pose>6.390 -0.026 -0.886 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.936</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.936</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_6"><static>true</static><pose>4.236 2.442 -0.68 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.718</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.718</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_7"><static>true</static><pose>4.010 -3.848 -0.732 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.772</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.772</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_8"><static>true</static><pose>12.008 -4.178 -0.668 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.706</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.706</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_9"><static>true</static><pose>9.126 -1.528 -0.655 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.694</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.694</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_10"><static>true</static><pose>12.876 0.638 -0.754 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.794</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.794</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_11"><static>true</static><pose>2.710 -3.294 -0.674 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.711</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.711</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_12"><static>true</static><pose>5.316 -2.408 -0.675 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.715</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.715</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_13"><static>true</static><pose>7.710 2.684 -0.532 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.579</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.579</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_14"><static>true</static><pose>6.820 3.708 -0.662 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.703</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.703</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_15"><static>true</static><pose>13.172 -3.466 -0.602 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.66</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.66</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_16"><static>true</static><pose>2.714 -1.912 -0.587 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.635</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.635</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_17"><static>true</static><pose>13.010 5.016 -0.742 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.781</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.781</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_18"><static>true</static><pose>4.170 -0.094 -0.665 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.705</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.705</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_19"><static>true</static><pose>4.430 -1.052 -0.694 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.74</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.74</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_20"><static>true</static><pose>11.382 0.472 -0.544 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.589</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.589</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_21"><static>true</static><pose>15.232 -1.580 -0.522 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.568</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.568</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="bump_22"><static>true</static><pose>5.150 -3.512 -0.569 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><sphere><radius>0.632</radius></sphere></geometry></collision>
+        <visual name="v"><geometry><sphere><radius>0.632</radius></sphere></geometry><material><ambient>0.6 0.62 0.58 1</ambient><diffuse>0.6 0.62 0.58 1</diffuse></material></visual>
+      </link>
+    </model>
   </world>
 </sdf>
