@@ -1,4 +1,4 @@
-# hexacopter_control
+# Multicopter
 
 Autonomous search-and-map mission for an X4 hexacopter in Gazebo (ROS 2, Python).
 The drone sweeps an arena with a downward camera, builds an occupancy map from the images,
